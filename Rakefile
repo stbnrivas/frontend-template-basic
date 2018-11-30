@@ -40,9 +40,13 @@ namespace :build do
         sh 'cp -r css dist/css/'
     end
     task :js do
-        #sh 'webpack --config=config/webpack.dev.js'
+        sh 'webpack --config=webpack.dev.js'
+        # sh 'mkdir -p dist/js'        
+        sh '[ -d dist/js ] || mkdir-p dist/js'
+        sh 'cp js/app-bundle.js dist/js/app-bundle.js'
     end
     task :all => ["html", "css", "js"] do
+        puts "Task Ends"
     end
     
     task :watch do
