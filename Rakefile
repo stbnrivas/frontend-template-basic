@@ -27,16 +27,17 @@ namespace :build do
     task :html do
         # https://code.google.com/archive/p/htmlcompressor/
         # java -jar htmlcompressor.jar --type html -o /to/ /from/
-        sh "java -jar vendor/htmlcompressor-1.5.3.jar --type html src/*.html -o dist/"
+        sh "java -jar vendor/htmlcompressor-1.5.3.jar --type html ./*.html --output dist/"
         #   -o output folder
     end
     task :css do
-        sh 'cp vendor/Font-Awesome/web-fonts-with-css/webfonts/* dist/fonts/'
-        # sh 'sass src\scss\app.scss:dist\css\app.css --style watch'
-        # sh 'sass src\scss\app.scss:dist\css\app.css --style nested'
-        sh 'sass src\scss\app.scss:dist\css\app.css --style compact'
-        # sh 'sass src\scss\app.scss:dist\css\app.css --style expanded'
-        # sh 'sass src\scss\app.scss:dist\css\app.css --style compressed'
+        sh 'cp -r fonts dist/fonts/'
+        # sh 'sass scss/app.scss:css/app.css --style watch'
+        # sh 'sass scss/app.scss:css/app.css --style nested'
+        sh 'sass scss/app.scss:css/app.css --style compact'
+        # sh 'sass scss/app.scss:css/app.css --style expanded'
+        # sh 'sass scss/app.scss:css/app.css --style compressed'
+        sh 'cp -r css dist/css/'
     end
     task :js do
         #sh 'webpack --config=config/webpack.dev.js'
@@ -46,7 +47,10 @@ namespace :build do
     
     task :watch do
     end
+
     task :clean do
+        'sh rm -rf ./dist/*'
+
     end
 end
 
