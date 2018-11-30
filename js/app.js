@@ -1,1 +1,13 @@
-alert ("hello")
+// var $ = require("jquery");
+// $('#test').html('Changed!');
+
+import Vue from 'vue'
+
+
+
+var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })

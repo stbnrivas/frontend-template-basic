@@ -81,5 +81,11 @@ module.exports = {
       minSize: 30000,
       name: true
     }
+  },
+
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
   }
 }
