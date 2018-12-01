@@ -2,7 +2,7 @@ task :default => [:show]
 
 task :show do
     puts 'build:html'
-    puts 'build:scss'
+    puts 'build:css'
     puts 'build:js'
     puts 'build:all'
     puts ''
