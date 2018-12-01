@@ -5001,3 +5001,7 @@ a.text-dark:hover, a.text-dark:focus { color: #1d2124 !important; }
 .primary-overlay {
   background-image: url("/img/hackaton.jpeg");
 }
+
+.ranking {
+  margin-top: 70px;
+}
